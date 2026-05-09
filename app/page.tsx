@@ -1,3 +1,15 @@
+"use client";
+
+import AuditForm from "@/components/forms/audit-form";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -15,9 +27,21 @@ export default function HomePage() {
         </p>
 
         <div className="mt-10 flex gap-4">
-          <button className="rounded-xl bg-white px-6 py-3 font-medium text-black">
-            Start Free Audit
-          </button>
+          <Dialog>
+           <DialogTrigger className="rounded-xl bg-white px-6 py-3 font-medium text-black">
+  Start Free Audit
+</DialogTrigger>
+
+            <DialogContent className="border-white/10 bg-[#0b0b0b] text-white sm:max-w-xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl">
+                  Start Your Free Audit
+                </DialogTitle>
+              </DialogHeader>
+
+              <AuditForm />
+            </DialogContent>
+          </Dialog>
 
           <button className="rounded-xl border border-white/20 px-6 py-3">
             View Demo
